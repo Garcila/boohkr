@@ -1,10 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import './App.css';
+
 import Nav from './components/Nav';
 import Search from './pages/Search';
 import Saved from './pages/Saved';
 import NotFound from './pages/NotFound';
+
+import './App.css';
 
 function App() {
   return (
