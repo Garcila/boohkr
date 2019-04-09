@@ -1,16 +1,28 @@
 import React, {Component} from 'react';
 
 export default class SearchBar extends Component {
+  state = {
+    term: '',
+  };
+
+  searchTerm = e => this.setState({term: e.target.value});
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const {searchBook} = this.props;
+    searchBook(this.state.term);
+  };
   render() {
     return (
       <form>
         <input
           type='text'
-          value=''
+          value={this.state.term}
           name='searchTerm'
           placeholder='Book to search 📕'
+          onChange={this.searchTerm}
         />
-        <button>Search Book 📕</button>
+        <button onClick={this.handleSubmit}>Search Book 📕</button>
       </form>
     );
   }
