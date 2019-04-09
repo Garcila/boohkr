@@ -1,14 +1,15 @@
 import React from 'react';
 
-export default function BookItem() {
+export default function BookItem(props) {
+  const {bookTitle, subtitle, description, image} = props;
   return (
     <div>
-      <h3>Book Title</h3>
-      <h4>Blurb</h4>
-      <p>Author</p>
+      <h3>{bookTitle}</h3>
+      <h4>{subtitle}</h4>
+      {/* <p>{authors}</p> */}
       <div>
-        <img src='' alt='book image' />
-        <p>book description</p>
+        <img src={image} alt='book image' />
+        <p>{description}</p>
         <button>View</button>
         <button>Save</button>
       </div>
