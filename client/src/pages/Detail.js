@@ -12,9 +12,6 @@ export default function Detail(props) {
     publishedDate,
   } = props.location.state.book.book.volumeInfo;
   const {image} = props.location.state.book;
-  console.log(props.location.state.book.book.volumeInfo.authors);
-  console.log(props.location.state.book.image);
-  console.log('from detail ', authors);
 
   // helper function to render authors
   const authorList = helpers.authorList(authors);

@@ -7,8 +7,6 @@ export default function BookItem(props) {
   const {id} = props.book;
   const {image} = props;
 
-  console.log(authors);
-
   // render only 240 characters in the initial description
   const shortDescription =
     description && `${description.substring(0, 240)} ...`;

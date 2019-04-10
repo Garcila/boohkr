@@ -2,9 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-}
-
-#root {
-  background: url('./images/10.png') no-repeat right center;
+  background: url('./images/10.png') no-repeat right top;
+  background-attachment: fixed;
   background-size: 50vw;
+  background-repeat: repeat-y;
 }
