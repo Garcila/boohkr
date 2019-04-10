@@ -3,7 +3,8 @@ import BookList from '../components/BookList';
 import Title from '../components/Title';
 import SearchBar from '../components/SearchBar';
 
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../utils/API';
 
 export default class Search extends Component {
   state = {
@@ -15,9 +16,7 @@ export default class Search extends Component {
   }
 
   searchBook = term => {
-    const URL = `https://www.googleapis.com/books/v1/volumes?q=${term}`;
-    axios
-      .get(URL)
+    API.fetchBooks(term)
       .then(res => this.setState({foundBooks: res.data.items}))
       .catch(err => console.log(err));
   };
