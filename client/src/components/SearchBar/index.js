@@ -11,6 +11,7 @@ export default class SearchBar extends Component {
     e.preventDefault();
     const {searchBook} = this.props;
     searchBook(this.state.term);
+    this.setState({term: ''});
   };
   render() {
     return (

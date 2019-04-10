@@ -4,7 +4,8 @@ export default function BookItem(props) {
   const {bookTitle, subtitle, description, image, authors} = props;
 
   // render only 240 characters in the initial description
-  const shortDescription = `${description.substring(0, 240)} ...`;
+  const shortDescription =
+    description && `${description.substring(0, 240)} ...`;
 
   //  account for one or two authors
   const authorsList = authors.map((author, i) => {
