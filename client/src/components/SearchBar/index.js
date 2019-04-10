@@ -20,10 +20,10 @@ export default class SearchBar extends Component {
           type='text'
           value={this.state.term}
           name='searchTerm'
-          placeholder='Book to search 📕'
+          placeholder='Book to search'
           onChange={this.searchTerm}
         />
-        <button onClick={this.handleSubmit}>Search Book 📕</button>
+        <button onClick={this.handleSubmit}>Search Book</button>
       </form>
     );
   }

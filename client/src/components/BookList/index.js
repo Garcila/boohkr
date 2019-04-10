@@ -6,11 +6,9 @@ export default function BookList({foundBooks}) {
     return (
       <BookItem
         key={book.id}
-        bookTitle={book.volumeInfo.title}
-        subtitle={book.volumeInfo.subtitle}
-        description={book.volumeInfo.description}
+        book={book}
+        id={book.id}
         image={book.volumeInfo.imageLinks.thumbnail}
-        authors={book.volumeInfo.authors}
       >
         {book.title}
       </BookItem>
