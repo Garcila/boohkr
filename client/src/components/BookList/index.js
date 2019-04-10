@@ -7,9 +7,10 @@ export default function BookList({foundBooks}) {
       <BookItem
         key={book.id}
         bookTitle={book.volumeInfo.title}
-        blurb={book.volumeInfo.subtitle}
-        descirption={book.volumeInfo.description}
+        subtitle={book.volumeInfo.subtitle}
+        description={book.volumeInfo.description}
         image={book.volumeInfo.imageLinks.thumbnail}
+        authors={book.volumeInfo.authors}
       >
         {book.title}
       </BookItem>

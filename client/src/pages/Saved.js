@@ -7,7 +7,7 @@ export default function Saved() {
     <div>
       <Title />
       <p>Saved books will be here</p>
-      <BookList />
+      {/* <BookList /> */}
     </div>
   );
 }
