@@ -10,8 +10,9 @@ export default function Detail(props) {
     pageCount,
     publisher,
     publishedDate,
-  } = props.location.state.book.book.volumeInfo;
-  const {image} = props.location.state.book;
+    thumbnail,
+  } = props.location.state.book.book;
+  // const {image} = props.location.state.book;
 
   // helper function to render authors
   const authorList = helpers.authorList(authors);
@@ -26,7 +27,7 @@ export default function Detail(props) {
         Publisher {publisher} on {publishedDate}
       </p>
       <div>
-        <img src={image} alt={`book: ${title}`} />
+        <img src={thumbnail} alt={`book: ${title}`} />
         <p>{description}</p>
       </div>
     </div>

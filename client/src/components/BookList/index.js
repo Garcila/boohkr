@@ -4,11 +4,7 @@ import BookItem from '../BookItem';
 export default function BookList({foundBooks}) {
   const bookItems = foundBooks.map(book => {
     return (
-      <BookItem
-        key={book.title + book.pageCount}
-        book={book}
-        id={book.title + book.pageCount}
-      >
+      <BookItem key={book.googleId} book={book}>
         {book.title}
       </BookItem>
     );

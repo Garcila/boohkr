@@ -15,6 +15,7 @@ export default class Search extends Component {
   }
 
   searchBook = term => {
+    this.setState({foundBooks: []});
     API.fetchBooks(term)
       .then(res =>
         res.data.items.map(book => {
@@ -29,6 +30,7 @@ export default class Search extends Component {
             previewLink,
           } = book.volumeInfo;
           const bookInfo = {
+            googleId: book.id,
             title,
             subtitle,
             authors,

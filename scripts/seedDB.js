@@ -9,6 +9,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/boohkr', {
 
 const bookSeed = [
   {
+    googleId: 'a3232dsesk',
     title: 'The Dead Zone',
     subtitle: 'this el subtitle',
     authors: 'Stephen King',
@@ -23,6 +24,7 @@ const bookSeed = [
     date: new Date(Date.now()),
   },
   {
+    googleId: 'asdfrwef2323sf23esf',
     title: 'Lord of the Flies',
     subtitle: 'aha aha',
     authors: 'William Golding',
