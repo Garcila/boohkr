@@ -33,7 +33,17 @@ export default function BookItem(props) {
         >
           <button>View</button>
         </Link>
-        <button>Save</button>
+        <Link
+          to={{
+            pathname: `/api/search/${id}`,
+            state: {
+              book: props,
+              image,
+            },
+          }}
+        >
+          <button>Save</button>
+        </Link>
       </div>
     </li>
   );
