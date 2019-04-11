@@ -9,7 +9,7 @@ const bookSchema = new Schema({
   pageCount: {type: Number},
   publisher: {type: String},
   publishedDate: {type: Date},
-  image: String,
+  thumbnail: String,
   link: String,
   date: {type: Date, default: Date.now},
 });

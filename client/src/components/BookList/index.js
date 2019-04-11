@@ -5,10 +5,9 @@ export default function BookList({foundBooks}) {
   const bookItems = foundBooks.map(book => {
     return (
       <BookItem
-        key={book.id}
+        key={book.title + book.pageCount}
         book={book}
-        id={book.id}
-        image={book.volumeInfo.imageLinks.thumbnail}
+        id={book.title + book.pageCount}
       >
         {book.title}
       </BookItem>

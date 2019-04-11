@@ -17,7 +17,7 @@ const bookSeed = [
     pageCount: 600,
     publisher: 'El publisher',
     publishedDate: '2018-04-09',
-    image:
+    thumbnail:
       'http://books.google.com/books/content?id=EWhNDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE719iWZjTuBPbZ5To_mOrIxXql0jLTeil-j1u97ReYs32qsl3TwuBYSv0bbToP01aLy85BxQqoZFkbd7ZnEmSfOgYsxawxONSZ753vl1w5ti60ZRK2OF5CG47kvkrXfNLYhn3_BI&source=gbs_api',
     link: 'http://books.google.ca/books?id=EWhNDwAAQBAJ&hl=&source=gbs_api',
     date: new Date(Date.now()),
@@ -31,7 +31,7 @@ const bookSeed = [
     pageCount: 600,
     publisher: 'El publisher',
     publishedDate: '2018-04-09',
-    image:
+    thumbnail:
       'http://books.google.com/books/content?id=EWhNDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE719iWZjTuBPbZ5To_mOrIxXql0jLTeil-j1u97ReYs32qsl3TwuBYSv0bbToP01aLy85BxQqoZFkbd7ZnEmSfOgYsxawxONSZ753vl1w5ti60ZRK2OF5CG47kvkrXfNLYhn3_BI&source=gbs_api',
     link: 'http://books.google.ca/books?id=EWhNDwAAQBAJ&hl=&source=gbs_api',
     date: new Date(Date.now()),
