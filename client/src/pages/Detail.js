@@ -20,7 +20,7 @@ export default function Detail(props) {
     <div>
       <h3>{title}</h3>
       <h4>{subtitle}</h4>
-      <ul>{authorList}</ul>
+      <ul>Author: {authorList}</ul>
       <p>Page count: {pageCount}</p>
       <p>
         Publisher {publisher} on {publishedDate}

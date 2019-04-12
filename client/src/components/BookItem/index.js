@@ -8,11 +8,29 @@ export default class BookItem extends Component {
     toSaved: false,
   };
 
+  componentDidMount() {
+    this.isItInDB() && this.setState({toSaved: true});
+  }
+
   saveBook = () => {
-    API.saveBook(this.props.book)
-      // change the state of toSaved in order to trigger <Redirect to='/saved' />
-      .then(() => this.setState(() => ({toSaved: true})))
-      .catch(err => console.log(err));
+    const book = this.props.book;
+    const googleId = book.googleId;
+    // Make sure that the book to save is not already in the database
+    API.findOne(googleId).then(res => {
+      if (!res.data) {
+        API.saveBook(this.props.book)
+          // change the state of toSaved in order to trigger <Redirect to='/saved' />
+          .then(() => this.setState(() => ({toSaved: true})))
+          .catch(err => console.log(err));
+      }
+    });
+  };
+
+  isItInDB = () => {
+    const {googleId} = this.props.book;
+    API.findOne(googleId).then(res =>
+      res.data ? this.setState({toSaved: true}) : null
+    );
   };
 
   render() {

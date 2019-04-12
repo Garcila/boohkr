@@ -14,4 +14,7 @@ router
   .put(booksController.update)
   .delete(booksController.remove);
 
+// Matches with "/api/books/one/:term"
+router.route('/one/:term').get(booksController.findOne);
+
 module.exports = router;

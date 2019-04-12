@@ -15,36 +15,26 @@ export default class Search extends Component {
 
   searchBooks = term => {
     this.setState({foundBooks: []});
+    const foundBooks = [];
     API.searchBooks(term)
-      .then(res =>
+      .then(res => {
         res.data.items.map(book => {
-          const {
-            title,
-            subtitle,
-            authors,
-            description,
-            pageCount,
-            publisher,
-            publishedDate,
-            previewLink,
-          } = book.volumeInfo;
           const bookInfo = {
             googleId: book.id,
-            title,
-            subtitle,
-            authors,
-            description,
-            pageCount,
-            publisher,
-            publishedDate,
+            title: book.volumeInfo.title,
+            subtitle: book.volumeInfo.subtitle,
+            authors: book.volumeInfo.authors,
+            description: book.volumeInfo.description,
+            pageCount: book.volumeInfo.pageCount,
+            publisher: book.volumeInfo.publisher,
+            publishedDate: book.volumeInfo.publishedDate,
             thumbnail: book.volumeInfo.imageLinks.thumbnail,
-            previewLink,
+            previewLink: book.volumeInfo.previewLink,
           };
-          return this.setState({
-            foundBooks: [...this.state.foundBooks, bookInfo],
-          });
-        })
-      )
+          foundBooks.push(bookInfo);
+        });
+      })
+      .then(() => this.setState({foundBooks}))
       .catch(err => console.log(err));
   };
 

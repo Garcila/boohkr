@@ -22,4 +22,8 @@ export default {
   saveBook: function(bookData) {
     return axios.post('/api/books', bookData);
   },
+  // Finds a book in the database using a term.  In this case google Id
+  findOne: function(term) {
+    return axios.get(`api/books/one/${term}`);
+  },
 };
