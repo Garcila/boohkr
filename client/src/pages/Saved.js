@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Title from '../components/Title';
 import BookList from '../components/BookList';
 
-import axios from 'axios';
+import API from '../utils/API';
 
 export default class Saved extends Component {
   state = {
@@ -10,15 +10,17 @@ export default class Saved extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get('/api/books')
-      .then(res => this.setState({foundBooks: res.data}))
-      .catch(err => console.log(err));
+    this.loadBooks();
   }
 
+  loadBooks = () => {
+    API.getBooks()
+      .then(res => this.setState({foundBooks: res.data}))
+      .catch(err => console.log(err));
+  };
+
   deleteBook = _id => {
-    axios
-      .delete(`/api/books/${_id}`)
+    API.deleteBook(_id)
       .then(() => {
         // find books that have not been deleted and update foundBooks list
         const foundBooks = this.state.foundBooks.filter(

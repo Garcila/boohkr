@@ -4,19 +4,18 @@ import Title from '../components/Title';
 import SearchBar from '../components/SearchBar';
 
 import API from '../utils/API';
-
 export default class Search extends Component {
   state = {
     foundBooks: [],
   };
 
   componentDidMount() {
-    this.searchBook('javaScript');
+    this.searchBooks('carl sagan');
   }
 
-  searchBook = term => {
+  searchBooks = term => {
     this.setState({foundBooks: []});
-    API.fetchBooks(term)
+    API.searchBooks(term)
       .then(res =>
         res.data.items.map(book => {
           const {
@@ -54,7 +53,7 @@ export default class Search extends Component {
       <div>
         <Title pageTitle='Boohkr Search' />
         <p>Search page will be here</p>
-        <SearchBar searchBook={this.searchBook} />
+        <SearchBar searchBooks={this.searchBooks} />
         <BookList foundBooks={this.state.foundBooks} />
       </div>
     );

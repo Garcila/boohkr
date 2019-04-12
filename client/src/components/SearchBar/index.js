@@ -9,8 +9,8 @@ export default class SearchBar extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const {searchBook} = this.props;
-    searchBook(this.state.term);
+    const {searchBooks} = this.props;
+    searchBooks(this.state.term);
     this.setState({term: ''});
   };
   render() {

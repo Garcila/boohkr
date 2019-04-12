@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import helpers from '../../utils/helpers';
-import axios from 'axios';
+import API from '../../utils/API';
 
 export default class BookItem extends Component {
   state = {
@@ -9,8 +9,7 @@ export default class BookItem extends Component {
   };
 
   saveBook = () => {
-    axios
-      .post('/api/books', this.props.book)
+    API.saveBook(this.props.book)
       // change the state of toSaved in order to trigger <Redirect to='/saved' />
       .then(() => this.setState(() => ({toSaved: true})))
       .catch(err => console.log(err));
