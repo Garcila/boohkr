@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import helpers from '../../utils/helpers';
 import axios from 'axios';
 
@@ -17,9 +17,9 @@ export default class BookItem extends Component {
   };
 
   render() {
-    if (this.state.toSaved === true) {
-      return <Redirect to='/saved' />;
-    }
+    // if (this.state.toSaved === true) {
+    //   return <Redirect to='/saved' />;
+    // }
     const {
       _id,
       title,
@@ -42,13 +42,30 @@ export default class BookItem extends Component {
       <button onClick={() => this.props.deleteBook(_id)}>Delete</button>
     ) : null;
 
+    const saved = this.state.toSaved ? (
+      <div
+        style={{
+          position: 'absolute',
+          color: 'white',
+          top: '5px',
+          backgroundColor: 'red',
+          whiteSpace: 'nowrap',
+          padding: '5px',
+        }}
+      >
+        saved
+      </div>
+    ) : null;
     return (
       <li>
         <h3>{title}</h3>
         <h4>{subtitle}</h4>
         <p>{authorsList}</p>
         <div>
-          <img src={thumbnail} alt={`book: ${title}`} />
+          <div style={{position: 'relative'}}>
+            <img src={thumbnail} alt={`book: ${title}`} />
+            {saved}
+          </div>
           <p>{shortDescription}</p>
           <Link
             to={{
