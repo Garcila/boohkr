@@ -37,9 +37,11 @@ export default class BookItem extends Component {
     const authorsList = authors && helpers.authorList(authors);
 
     // function to conditionally render the delete button depending if user is visiting Saved or Search
-    const deleteButton = _id ? (
+    const saveOrDeleteButton = _id ? (
       <button onClick={() => this.props.deleteBook(_id)}>Delete</button>
-    ) : null;
+    ) : (
+      <button onClick={this.saveBook}>Save</button>
+    );
 
     const saved = this.state.toSaved ? (
       <div
@@ -77,8 +79,8 @@ export default class BookItem extends Component {
           >
             <button>View</button>
           </Link>
-          <button onClick={this.saveBook}>Save</button>
-          {deleteButton}
+
+          {saveOrDeleteButton}
         </div>
       </li>
     );
