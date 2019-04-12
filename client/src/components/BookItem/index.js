@@ -21,6 +21,7 @@ export default class BookItem extends Component {
       return <Redirect to='/saved' />;
     }
     const {
+      _id,
       title,
       subtitle,
       description,
@@ -35,6 +36,11 @@ export default class BookItem extends Component {
 
     // helper function to render authors
     const authorsList = authors && helpers.authorList(authors);
+
+    // function to conditionally render the delete button depending if user is visiting Saved or Search
+    const deleteButton = _id ? (
+      <button onClick={() => this.props.deleteBook(_id)}>Delete</button>
+    ) : null;
 
     return (
       <li>
@@ -56,6 +62,7 @@ export default class BookItem extends Component {
             <button>View</button>
           </Link>
           <button onClick={this.saveBook}>Save</button>
+          {deleteButton}
         </div>
       </li>
     );

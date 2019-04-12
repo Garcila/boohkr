@@ -52,7 +52,7 @@ export default class Search extends Component {
   render() {
     return (
       <div>
-        <Title />
+        <Title pageTitle='Boohkr Search' />
         <p>Search page will be here</p>
         <SearchBar searchBook={this.searchBook} />
         <BookList foundBooks={this.state.foundBooks} />

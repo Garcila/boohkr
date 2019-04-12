@@ -12,7 +12,6 @@ export default function Detail(props) {
     publishedDate,
     thumbnail,
   } = props.location.state.book.book;
-  // const {image} = props.location.state.book;
 
   // helper function to render authors
   const authorList = helpers.authorList(authors);
