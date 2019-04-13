@@ -1,5 +1,6 @@
 import React from 'react';
 import helpers from '../utils/helpers';
+import Title from '../components/Title/Title';
 
 export default function Detail(props) {
   const {
@@ -18,8 +19,7 @@ export default function Detail(props) {
 
   return (
     <div>
-      <h3>{title}</h3>
-      <h4>{subtitle}</h4>
+      <Title pageTitle={title} subtitle={subtitle} />
       <ul>Author: {authorList}</ul>
       <p>Page count: {pageCount}</p>
       <p>

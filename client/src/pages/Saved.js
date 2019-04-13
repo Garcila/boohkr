@@ -43,7 +43,7 @@ export default class Saved extends Component {
       );
     return (
       <div>
-        <Title pageTitle='Saved Books' />
+        <Title pageTitle='Boohkr Saved' subtitle='Your collection' />
         {showBooksInDb}
       </div>
     );

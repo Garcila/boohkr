@@ -42,8 +42,10 @@ export default class Search extends Component {
   render() {
     return (
       <div>
-        <Title pageTitle='Boohkr Search' />
-        <p>Search page will be here</p>
+        <Title
+          pageTitle='Boohkr Search'
+          subtitle='Look for books to save in your collection'
+        />
         <SearchBar searchBooks={this.searchBooks} />
         <BookList foundBooks={this.state.foundBooks} />
       </div>
