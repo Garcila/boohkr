@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import BookList from '../components/BookList';
-import Title from '../components/Title';
-import SearchBar from '../components/SearchBar';
+import BookList from '../components/BookList/BookList';
+import Title from '../components/Title/Title';
+import SearchBar from '../components/SearchBar/SearchBar';
 
 import API from '../utils/API';
 export default class Search extends Component {
@@ -18,7 +18,7 @@ export default class Search extends Component {
     const foundBooks = [];
     API.searchBooks(term)
       .then(res => {
-        res.data.items.map(book => {
+        res.data.items.map(function(book) {
           const bookInfo = {
             googleId: book.id,
             title: book.volumeInfo.title,
@@ -32,6 +32,7 @@ export default class Search extends Component {
             previewLink: book.volumeInfo.previewLink,
           };
           foundBooks.push(bookInfo);
+          return null;
         });
       })
       .then(() => this.setState({foundBooks}))

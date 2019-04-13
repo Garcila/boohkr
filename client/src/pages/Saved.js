@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import Title from '../components/Title';
-import BookList from '../components/BookList';
+import Title from '../components/Title/Title';
+import BookList from '../components/BookList/BookList';
 
 import API from '../utils/API';
 
 export default class Saved extends Component {
   state = {
-    foundBooks: [],
+    booksInDb: [],
   };
 
   componentDidMount() {
@@ -15,7 +15,7 @@ export default class Saved extends Component {
 
   loadBooks = () => {
     API.getBooks()
-      .then(res => this.setState({foundBooks: res.data}))
+      .then(res => this.setState({booksInDb: res.data}))
       .catch(err => console.log(err));
   };
 
@@ -23,19 +23,19 @@ export default class Saved extends Component {
     API.deleteBook(_id)
       .then(() => {
         // find books that have not been deleted and update foundBooks list
-        const foundBooks = this.state.foundBooks.filter(
+        const remainingBooks = this.state.booksInDb.filter(
           book => book._id !== _id
         );
-        this.setState({foundBooks});
+        this.setState({booksInDb: remainingBooks});
       })
       .catch(err => console.log(err));
   };
 
   render() {
-    const booksInDb =
-      this.state.foundBooks.length > 0 ? (
+    const showBooksInDb =
+      this.state.booksInDb.length > 0 ? (
         <BookList
-          foundBooks={this.state.foundBooks}
+          booksInDb={this.state.booksInDb}
           deleteBook={this.deleteBook}
         />
       ) : (
@@ -44,8 +44,7 @@ export default class Saved extends Component {
     return (
       <div>
         <Title pageTitle='Saved Books' />
-        <p>Saved books will be here</p>
-        {booksInDb}
+        {showBooksInDb}
       </div>
     );
   }

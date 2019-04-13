@@ -90,7 +90,7 @@ export default class BookItem extends Component {
             to={{
               pathname: `/search/${googleId}`,
               state: {
-                book: this.props,
+                book: this.props.book,
                 thumbnail,
               },
             }}

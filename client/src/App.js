@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import Nav from './components/Nav';
-import Footer from './components/Footer';
+import Nav from './components/Nav/Nav';
+import Footer from './components/Footer/Footer';
 import Search from './pages/Search';
 import Detail from './pages/Detail';
 import Saved from './pages/Saved';
