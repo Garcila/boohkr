@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+.Container {
+  background: url('./images/10.png') no-repeat right top;
+  background-attachment: fixed;
+  background-size: 50vw;
+  background-repeat: repeat-y;
 }
 
 .App-logo {

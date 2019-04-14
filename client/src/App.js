@@ -7,25 +7,24 @@ import Search from './pages/Search';
 import Detail from './pages/Detail';
 import Saved from './pages/Saved';
 import NotFound from './pages/NotFound';
+import Landing from './pages/Landing';
 
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <>
+    <div className='Container'>
+      <Router>
         <Nav />
         <Switch>
-          <Route exact path='/' component={Search} />
+          <Route exact path='/' component={Landing} />
           <Route exact path='/search' component={Search} />
           <Route exact path='/search/:id' component={Detail} />
           <Route exact path='/saved' component={Saved} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
-      </>
-    </Router>
+      </Router>
+    </div>
   );
 }
-
-export default App;
