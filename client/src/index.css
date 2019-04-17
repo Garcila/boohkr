@@ -1,5 +1,64 @@
-body {
+:root {
+  --text-color: #3d3d3d;
+  --title-colour: #1c5261;
+  --white-colour: #ebfaff;
+  --happy-blue: #1ec2f0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+  color: var(--text-color);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Reset margins and paddings on most elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+/* Removes discs from ul */
+ul {
+  list-style: none;
+}
+
+/* Inherit fonts anc colour for buttons... */
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  border-radius: 0;
+  padding: 0.75em 1em;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
