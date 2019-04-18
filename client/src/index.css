@@ -1,7 +1,9 @@
 :root {
   --text-color: #3d3d3d;
   --title-colour: #1c5261;
+  --dark-blue: #1d6d83;
   --white-colour: #ebfaff;
+  --white-transparent: rgb(234, 249, 255, 0.35);
   --happy-blue: #1ec2f0;
 }
 

@@ -2,6 +2,83 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import helpers from '../../utils/helpers';
 import API from '../../utils/API';
+import styled from 'styled-components';
+
+const BookItemLiSt = styled.li`
+  background-color: var(--white-transparent);
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const TitleSt = styled.h3`
+  color: var(--white-colour);
+  background-color: var(--dark-blue);
+  padding: 10px;
+  height: 80px;
+  text-align: center;
+  font-variant: all-small-caps;
+`;
+const SubtitleSt = styled.h5`
+  padding: 10px 0 0 5px;
+  height: 2rem;
+  text-align: center;
+`;
+const AuthorSt = styled.h3`
+  color: var(--white-colour);
+  padding: 10px 0 0 5px;
+  height: 2rem;
+  color: var(--dark-blue);
+  text-align: center;
+  font-variant: all-small-caps;
+  font-weight: bold;
+`;
+
+const ImgContainerSt = styled.div`
+  flex: 1;
+`;
+
+const ImageSt = styled.div`
+  min-height: 230px;
+  text-align: center;
+  flex: 1;
+`;
+
+const SavedSt = styled.div`
+  position: absolute;
+  color: white;
+  top: 5px;
+  background-color: red;
+  white-space: nowrap;
+  padding: 5px;
+`;
+
+const DescriptionSt = styled.div`
+  padding: 0 1rem;
+  min-height: 150px;
+`;
+
+const ButtonSt = styled.button`
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  display: inline-block;
+  margin: 0.5rem 1rem 0 0;
+  width: 5rem;
+  border: 2px solid white;
+  background: var(--title-colour);
+  color: var(--white-colour);
+  text-align: center;
+  margin: 1rem;
+
+  :hover {
+    background: var(--happy-blue);
+  }
+`;
+
+const ButtonContainerSt = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export default class BookItem extends Component {
   state = {
@@ -49,58 +126,46 @@ export default class BookItem extends Component {
 
     // render only 240 characters in the initial description
     const shortDescription =
-      description && `${description.substring(0, 240)} ...`;
+      description && `${description.substring(0, 140)} ...`;
 
     // helper function to render authors
     const authorsList = authors && helpers.authorList(authors);
 
     // function to conditionally render the delete button depending if user is visiting Saved or Search
     const saveOrDeleteButton = _id ? (
-      <button onClick={() => this.props.deleteBook(_id)}>Delete</button>
+      <ButtonSt onClick={() => this.props.deleteBook(_id)}>Delete</ButtonSt>
     ) : (
-      <button onClick={this.saveBook}>Save</button>
+      <ButtonSt onClick={this.saveBook}>Save</ButtonSt>
     );
 
-    const saved = this.state.toSaved ? (
-      <div
-        style={{
-          position: 'absolute',
-          color: 'white',
-          top: '5px',
-          backgroundColor: 'red',
-          whiteSpace: 'nowrap',
-          padding: '5px',
-        }}
-      >
-        saved
-      </div>
-    ) : null;
+    const saved = this.state.toSaved ? <SavedSt>saved</SavedSt> : null;
     return (
-      <li>
-        <h3>{title}</h3>
-        <h4>{subtitle}</h4>
-        <p>{authorsList}</p>
-        <div>
-          <div style={{position: 'relative'}}>
+      <BookItemLiSt>
+        <TitleSt>{title}</TitleSt>
+        <SubtitleSt>{subtitle || '-'}</SubtitleSt>
+        <AuthorSt>{authorsList}</AuthorSt>
+        <ImgContainerSt>
+          <ImageSt style={{position: 'relative'}}>
             <img src={thumbnail} alt={`book: ${title}`} />
             {saved}
-          </div>
-          <p>{shortDescription}</p>
-          <Link
-            to={{
-              pathname: `/search/${googleId}`,
-              state: {
-                book: this.props.book,
-                thumbnail,
-              },
-            }}
-          >
-            <button>View</button>
-          </Link>
-
-          {saveOrDeleteButton}
-        </div>
-      </li>
+          </ImageSt>
+          <DescriptionSt>{shortDescription}</DescriptionSt>
+          <ButtonContainerSt>
+            <Link
+              to={{
+                pathname: `/search/${googleId}`,
+                state: {
+                  book: this.props.book,
+                  thumbnail,
+                },
+              }}
+            >
+              <ButtonSt>View</ButtonSt>
+            </Link>
+            {saveOrDeleteButton}
+          </ButtonContainerSt>
+        </ImgContainerSt>
+      </BookItemLiSt>
     );
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HeaderContainerSt = styled.h1`
+const HeaderContainerSt = styled.div`
+  margin-top: 5rem;
   padding-left: 7%;
 `;
 

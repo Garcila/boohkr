@@ -27,6 +27,14 @@ const NavSt = styled.nav`
 `;
 const LinkSt = styled.div`
   padding: 0 10px 0 10px;
+
+  :first-child:hover {
+    color: var(--white-colour);
+  }
+
+  :nth-child(2):hover {
+    color: var(--white-colour);
+  }
 `;
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
