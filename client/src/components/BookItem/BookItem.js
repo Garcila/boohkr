@@ -38,6 +38,11 @@ const ImgContainerSt = styled.div`
   flex: 1;
 `;
 
+const ImgSt = styled.img`
+  margin-top: 0.5rem;
+  box-shadow: -1px 15px 23px -5px rgba(40, 58, 64, 0.57);
+`;
+
 const ImageSt = styled.div`
   min-height: 230px;
   text-align: center;
@@ -56,6 +61,7 @@ const SavedSt = styled.div`
 const DescriptionSt = styled.div`
   padding: 0 1rem;
   min-height: 150px;
+  text-align: justify;
 `;
 
 const ButtonSt = styled.button`
@@ -111,9 +117,6 @@ export default class BookItem extends Component {
   };
 
   render() {
-    // if (this.state.toSaved === true) {
-    //   return <Redirect to='/saved' />;
-    // }
     const {
       _id,
       title,
@@ -146,7 +149,7 @@ export default class BookItem extends Component {
         <AuthorSt>{authorsList}</AuthorSt>
         <ImgContainerSt>
           <ImageSt style={{position: 'relative'}}>
-            <img src={thumbnail} alt={`book: ${title}`} />
+            <ImgSt src={thumbnail} alt={`book: ${title}`} />
             {saved}
           </ImageSt>
           <DescriptionSt>{shortDescription}</DescriptionSt>

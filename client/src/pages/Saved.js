@@ -1,8 +1,28 @@
 import React, {Component} from 'react';
 import Title from '../components/Title/Title';
 import BookList from '../components/BookList/BookList';
+import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
 
 import API from '../utils/API';
+
+const SavedContainerSt = styled.div`
+  flex: 1 auto;
+  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_1000/v1555690658/02.png')
+    repeat-y right;
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_400/v1555690658/02.png')
+      right;
+  }
+`;
+
+const LoadingSt = styled.h1`
+  display: flex;
+  flex: 1 auto;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default class Saved extends Component {
   state = {
@@ -39,13 +59,15 @@ export default class Saved extends Component {
           deleteBook={this.deleteBook}
         />
       ) : (
-        <h1>...Loading</h1>
+        <LoadingSt>
+          <Loader type='Puff' color='white' height='100' width='100' />
+        </LoadingSt>
       );
     return (
-      <div>
+      <SavedContainerSt>
         <Title pageTitle='Boohkr Saved' subtitle='Your collection' />
         {showBooksInDb}
-      </div>
+      </SavedContainerSt>
     );
   }
 }

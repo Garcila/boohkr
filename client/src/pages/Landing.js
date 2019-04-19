@@ -18,6 +18,11 @@ const LandingSt = styled.div`
       no-repeat;
     background-position: center 20px;
   }
+  @media only screen and (max-device-height: 570px) and (-webkit-min-device-pixel-ratio: 2) {
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,w_100/v1555251885/10.png')
+      no-repeat;
+    background-position: center 10px;
+  }
 `;
 
 const TitleSubButtonsSt = styled.div`
@@ -36,6 +41,9 @@ const ButtonSt = styled.div`
 
   button {
     margin: 1rem 1rem 0 0;
+  }
+  @media only screen and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    max-width: 200px;
   }
 `;
 

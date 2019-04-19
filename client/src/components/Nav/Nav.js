@@ -13,6 +13,11 @@ const NavSt = styled.nav`
   background-color: rgba(0, 0, 0, 0.01);
   color: var(--title-colour);
 
+  @media only screen and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   ${props =>
     props.secondaryNav &&
     css`
@@ -23,6 +28,11 @@ const NavSt = styled.nav`
       padding: 0px 10px 0 10px;
       background: none;
       color: var(--title-colour);
+
+      @media only screen and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+        flex-direction: row;
+        align-items: flex-start;
+      }
     `};
 `;
 const LinkSt = styled.div`

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
-const FormSt = styled.div`
+const FormSt = styled.form`
   padding-left: 7%;
   font-weight: bold;
 `;
