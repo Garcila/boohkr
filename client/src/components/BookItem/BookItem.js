@@ -36,7 +36,6 @@ const AuthorSt = styled.h3`
 
 const ImgContainerSt = styled.div`
   flex: 1;
-  margin-top: 2rem;
 `;
 
 const ImgSt = styled.img`

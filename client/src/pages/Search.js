@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Loader from 'react-loader-spinner';
 
 import API from '../utils/API';
-import helpers from '../utils/helpers';
 
 const SearchContainerSt = styled.div`
   flex: 1;
@@ -51,21 +50,15 @@ export default class Search extends Component {
             pageCount: book.volumeInfo.pageCount,
             publisher: book.volumeInfo.publisher,
             publishedDate: book.volumeInfo.publishedDate,
-            thumbnail: book.volumeInfo.imageLinks
-              ? book.volumeInfo.imageLinks.thumbnail
-              : 'https://res.cloudinary.com/garcila/image/upload/b_rgb:ffffff,c_scale,co_rgb:ffffff,h_200,w_150/v1555695687/07.png',
+            thumbnail: book.volumeInfo.imageLinks.thumbnail || null,
             previewLink: book.volumeInfo.previewLink,
           };
           foundBooks.push(bookInfo);
           return null;
         });
       })
-      .then(() => {
-        this.setState({foundBooks: foundBooks});
-      })
-      .catch(err => {
-        console.log(err);
-      });
+      .then(() => this.setState({foundBooks}))
+      .catch(err => console.log(err));
   };
 
   render() {

@@ -11,20 +11,4 @@ export default {
       );
     });
   },
-  notFoundBook: function() {
-    const bookInfo = {
-      googleId: 'n/a',
-      title: 'BOOK NOT FOUND',
-      subtitle: 'Please try new search',
-      authors: [''],
-      description: '',
-      pageCount: '',
-      publisher: '',
-      publishedDate: '',
-      thumbnail:
-        'https://res.cloudinary.com/garcila/image/upload/c_scale,w_300/v1555695687/07.png',
-      previewLink: '',
-    };
-    return bookInfo;
-  },
 };
