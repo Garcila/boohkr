@@ -15,10 +15,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Connect to mongoose
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/boohkr_books',
-  {useNewUrlParser: true}
-);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/books', {
+  useNewUrlParser: true,
+});
 
 // Define API routes here
 app.use(routes);
