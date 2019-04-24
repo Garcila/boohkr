@@ -1,3 +1,5 @@
+<body style="background: linear-gradient(to bottom, #0b6879, #10476e);">
+
 <h1 align="center">📘 BOOHKR 📘 </h1> 
 <h3 align="center">Find and save precious reads</h3>
 
@@ -60,3 +62,5 @@ Get it from Github at [Garcila](git@github.com:Garcila/boohkr.git) and make it y
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+</body>
