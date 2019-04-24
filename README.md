@@ -27,17 +27,29 @@ Get it from Github at git@github.com:Garcila/boohkr.git and make it yours ðŸ“˜ðŸ
 
 ## Screenshots
 
-![Ipad Landscape Mode Landing Page](https://res.cloudinary.com/garcila/image/upload/v1556111854/boohkr_landscape.png)
+<p align="center">
+<img src="https://res.cloudinary.com/garcila/image/upload/v1556111854/boohkr_landscape.png" alt='Ipad Landscape Mode Landing Page' />
+</p>
 
-![Ipad Landscape Mode Landing Page](https://res.cloudinary.com/garcila/image/upload/v1556111854/boohkr_landscape.png)
+<p align="center">
+<img src="https://res.cloudinary.com/garcila/image/upload/v1556117598/boohkr_search.png" atl='Ipad Portrait Mode Search Page' />
+
+<p align="center">
+<img src="https://res.cloudinary.com/garcila/image/upload/v1556117599/boohkr_saved.png" atl='Ipad Portrait Mode Saved Page' />
+</p>
 
 ## Built With
 
 * [Node](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine.
 * [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
-* [Moment](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
-* [dotenv](https://www.npmjs.com/package/dotenv) - Easily work with environment variables
-* [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) - A simple library for the Spotify REST API
+* [Express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
+* [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+* [Mongo](https://www.mongodb.com/) - MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need
+* [Mongoose](https://mongoosejs.com/) - elegant mongodb object modeling for node.js
+
+## Images By
+
+* **Absurd Design** -  [Absurd Design site](https://garcila.github.io/)
 
 ## Author
 

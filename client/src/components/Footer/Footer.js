@@ -21,9 +21,11 @@ export default function Footer() {
           💻
         </span>{' '}
         by a non{' '}
-        <span role='img' aria-label='robot'>
-          🤖
-        </span>
+        <a href='https://github.com/Garcila'>
+          <span role='img' aria-label='robot'>
+            🤖
+          </span>
+        </a>
       </p>
     </FootSt>
   );
