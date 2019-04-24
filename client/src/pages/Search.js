@@ -13,6 +13,11 @@ const SearchContainerSt = styled.div`
   background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_1000/v1555623687/06.png')
     no-repeat right;
 
+  @media only screen and (min-device-width: 480px) and (max-device-width: 770px) and (-webkit-min-device-pixel-ratio: 2) {
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_12,w_1000/v1555623687/06.png')
+      repeat-y right;
+  }
+
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
     background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_12,w_1000/v1555623687/06.png')
       right;
@@ -50,7 +55,10 @@ export default class Search extends Component {
             pageCount: book.volumeInfo.pageCount,
             publisher: book.volumeInfo.publisher,
             publishedDate: book.volumeInfo.publishedDate,
-            thumbnail: book.volumeInfo.imageLinks.thumbnail || null,
+            thumbnail:
+              (book.volumeInfo.imageLinks &&
+                book.volumeInfo.imageLinks.thumbnail) ||
+              'https://res.cloudinary.com/garcila/image/upload/c_scale,h_200,w_150/v1556115282/imagenotavailable.jpg',
             previewLink: book.volumeInfo.previewLink,
           };
           foundBooks.push(bookInfo);

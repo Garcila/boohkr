@@ -127,6 +127,11 @@ export default class BookItem extends Component {
       googleId,
     } = this.props.book;
 
+    const shortAuthors =
+      authors.length > 1
+        ? `${authors[0].substring(0, 20)} ...`
+        : authors[0].substring(0, 22);
+
     // render only 240 characters in the initial description
     const shortDescription =
       description && `${description.substring(0, 140)} ...`;
@@ -146,7 +151,7 @@ export default class BookItem extends Component {
       <BookItemLiSt>
         <TitleSt>{title}</TitleSt>
         <SubtitleSt>{subtitle || '-'}</SubtitleSt>
-        <AuthorSt>{authorsList}</AuthorSt>
+        <AuthorSt>{shortAuthors}</AuthorSt>
         <ImgContainerSt>
           <ImageSt style={{position: 'relative'}}>
             <ImgSt src={thumbnail} alt={`book: ${title}`} />

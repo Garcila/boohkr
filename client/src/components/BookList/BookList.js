@@ -9,6 +9,10 @@ const BookListSt = styled.ul`
   margin: 5rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: minmax(500px, auto);
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    margin: 10%;
+  }
 `;
 
 export default function BookList({foundBooks, booksInDb, deleteBook}) {

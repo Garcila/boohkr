@@ -1,29 +1,48 @@
-# Create React Express App
+<h1 align="center">📘 BOOHKR 📘 </h1> 
+<h3 align="center">Find and save precious reads</h3>
 
-## About This Boilerplate
+<div align="center">
+  <!-- Made By -->
+  <a href="https://garcila.github.io/">
+    <img src='https://img.shields.io/badge/made%20by-not%20a%20%F0%9F%A4%96-blue.svg'
+      alt="Builder" />
+  </a>
+  <!-- Inspired by -->
+  <a href="https://bootcamp.learn.utoronto.ca/coding/landing-2/?s=Google-Brand&hp=1&&60829831671_kwd-487761142440__296493434781_g_c___dc&pkw=%2Bu%20%2Bof%20%2Bt%20%2Bbootcamp&pcrid=296493434781&pmt=b&utm_source=google&utm_medium=cpc&utm_campaign=%5BS%5D+Brand+-+Exact&utm_term=%2Bu%20%2Bof%20%2Bt%20%2Bbootcamp&utm_content=296493434781&d=google&k=%2Bu%20%2Bof%20%2Bt%20%2Bbootcamp&gclid=Cj0KCQiA-JXiBRCpARIsAGqF8wX4c1lBsQgBO8d4bfNZ6IOnwElwmwOyB3vHS2jd1P_I3POkgVrOZnIaAixzEALw_wcB&gclsrc=aw.ds">
+    <img src="https://img.shields.io/badge/inspired-uot%20bootcamp-brightgreen.svg"
+      alt="University of Toronto Bootcamp" />
+  </a>
+</div>
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+A simple app to search books and saved them in a database
+- 📖 Uses Google books api to search books
+- 👁 Gives you visual indication of books you already have in your database when you are in search mode
+- 🏡 Provides a non out of the box CSS look and feel, but it remaining intuitive
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Starting the app locally
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Clone and tinker
 
-```
-npm install
-```
+Get it from Github at git@github.com:Garcila/boohkr.git and make it yours 📘📙📕📗.
 
-This should install node modules within the server and the client folder.
+## Screenshots
 
-After both installations complete, run the following command in your terminal:
+![Ipad Landscape Mode Landing Page](https://res.cloudinary.com/garcila/image/upload/v1556111854/boohkr_landscape.png)
 
-```
-npm start
-```
+![Ipad Landscape Mode Landing Page](https://res.cloudinary.com/garcila/image/upload/v1556111854/boohkr_landscape.png)
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+## Built With
 
-## Deployment (Heroku)
+* [Node](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine.
+* [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
+* [Moment](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
+* [dotenv](https://www.npmjs.com/package/dotenv) - Easily work with environment variables
+* [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) - A simple library for the Spotify REST API
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+## Author
+
+* **German Arcila** - *Initial work* - [Filling the Bucket](https://garcila.github.io/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

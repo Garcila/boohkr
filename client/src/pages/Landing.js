@@ -67,7 +67,7 @@ export default function Landing() {
   return (
     <LandingSt>
       <TitleSubButtonsSt>
-        <Title pageTitle='BOOHKR' subtitle='Find and and save precious reads' />
+        <Title pageTitle='BOOHKR' subtitle='Find and save precious reads' />
         <ButtonSt>
           <Link to='/search'>
             <Button>Search</Button>
