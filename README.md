@@ -23,7 +23,7 @@ A simple app to search books and saved them in a database
 
 ## Clone and tinker
 
-Get it from Github at git@github.com:Garcila/boohkr.git and make it yours 📘📙📕📗.
+Get it from Github at [Garcila](git@github.com:Garcila/boohkr.git) and make it yours 📘📙📕📗.
 
 ## Screenshots
 
@@ -41,11 +41,13 @@ Get it from Github at git@github.com:Garcila/boohkr.git and make it yours 📘�
 ## Built With
 
 * [Node](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine.
-* [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
 * [Express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
 * [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 * [Mongo](https://www.mongodb.com/) - MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need
 * [Mongoose](https://mongoosejs.com/) - elegant mongodb object modeling for node.js
+* [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
+* [GoogleBooksAPI](https://developers.google.com/books/) - Google Books API
+* [CSS Grid](https://www.w3.org/TR/css-grid-1/#grid-definition) - CSS Grid
 
 ## Images By
 
