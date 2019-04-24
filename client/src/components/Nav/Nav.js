@@ -10,7 +10,7 @@ const NavSt = styled.nav`
   justify-content: space-between;
   align-items: baseline;
   text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: rgba(0, 0, 0, 0.1);
   color: var(--title-colour);
 
   @media only screen and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
