@@ -3,6 +3,27 @@ import Title from '../components/Title/Title';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+export default function Landing() {
+  return (
+    <LandingSt>
+      <TitleSubButtonsSt>
+        <Title pageTitle='BOOHKR' subtitle='Find and save precious reads' />
+        <ButtonSt>
+          <Link to='/search'>
+            <Button>Search</Button>
+          </Link>
+
+          <Link to='/saved'>
+            <Button>Saved</Button>
+          </Link>
+        </ButtonSt>
+      </TitleSubButtonsSt>
+    </LandingSt>
+  );
+}
+
+// CSS_____________________________________________________
+
 const LandingSt = styled.div`
   flex: 1;
   background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,w_1038/v1555251885/10.png')
@@ -62,22 +83,3 @@ const Button = styled.button`
     background: var(--happy-blue);
   }
 `;
-
-export default function Landing() {
-  return (
-    <LandingSt>
-      <TitleSubButtonsSt>
-        <Title pageTitle='BOOHKR' subtitle='Find and save precious reads' />
-        <ButtonSt>
-          <Link to='/search'>
-            <Button>Search</Button>
-          </Link>
-
-          <Link to='/saved'>
-            <Button>Saved</Button>
-          </Link>
-        </ButtonSt>
-      </TitleSubButtonsSt>
-    </LandingSt>
-  );
-}

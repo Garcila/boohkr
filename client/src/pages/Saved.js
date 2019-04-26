@@ -6,24 +6,6 @@ import Loader from 'react-loader-spinner';
 
 import API from '../utils/API';
 
-const SavedContainerSt = styled.div`
-  flex: 1 auto;
-  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_1000/v1555690658/02.png')
-    repeat-y 50vw;
-
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_400/v1555690658/02.png')
-      repeat-y 40vw;
-  }
-`;
-
-const LoadingSt = styled.h1`
-  display: flex;
-  flex: 1 auto;
-  justify-content: center;
-  align-items: center;
-`;
-
 export default class Saved extends Component {
   state = {
     booksInDb: [],
@@ -71,3 +53,23 @@ export default class Saved extends Component {
     );
   }
 }
+
+// CSS_____________________________________________________
+
+const SavedContainerSt = styled.div`
+  flex: 1 auto;
+  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_1000/v1555690658/02.png')
+    repeat-y 50vw;
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_400/v1555690658/02.png')
+      repeat-y 40vw;
+  }
+`;
+
+const LoadingSt = styled.h1`
+  display: flex;
+  flex: 1 auto;
+  justify-content: center;
+  align-items: center;
+`;

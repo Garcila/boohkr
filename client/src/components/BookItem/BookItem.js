@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-// import helpers from '../../utils/helpers';
 import API from '../../utils/API';
 import styled from 'styled-components';
 
@@ -56,9 +55,6 @@ export default class BookItem extends Component {
     const shortDescription =
       description && `${description.substring(0, 140)} ...`;
 
-    // helper function to render authors
-    // const authorsList = authors && helpers.authorList(authors);
-
     // function to conditionally render the delete button depending if user is visiting Saved or Search
     const saveOrDeleteButton = _id ? (
       <ButtonSt onClick={() => this.props.deleteBook(_id)}>Delete</ButtonSt>
@@ -69,6 +65,7 @@ export default class BookItem extends Component {
     const saved = this.state.toSaved ? <SavedSt>saved</SavedSt> : null;
     return (
       <BookItemLiSt>
+        {/* // shorten titles and subtitles to fit in cards */}
         <TitleSt>{title && title.substring(0, 65)}</TitleSt>
         <SubtitleSt>
           {(subtitle && subtitle.substring(0, 50)) || '-'}
