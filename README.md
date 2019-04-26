@@ -19,7 +19,7 @@
 A simple app to search books and saved them in a database
 - 📖 Uses Google books api to search books
 - 👁 Gives you visual indication of books you already have in your database when you are in search mode
-- 🏡 Provides a non out of the box CSS look and feel, but it remaining intuitive
+- 🏡 Provides a non out of the box CSS look and feel, remaining intuitive
 
 
 
