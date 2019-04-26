@@ -4,6 +4,102 @@ import helpers from '../../utils/helpers';
 import API from '../../utils/API';
 import styled from 'styled-components';
 
+export default class BookItem extends Component {
+  state = {
+    toSaved: false,
+  };
+
+  componentDidMount() {
+    this.isItInDB() && this.setState({toSaved: true});
+  }
+
+  saveBook = () => {
+    const book = this.props.book;
+    const googleId = book.googleId;
+    // Make sure that the book to save is not already in the database
+    API.findOne(googleId).then(res => {
+      if (!res.data) {
+        API.saveBook(this.props.book)
+          // change the state of toSaved in order to trigger <Redirect to='/saved' />
+          .then(() => this.setState(() => ({toSaved: true})))
+          .catch(err => console.log(err));
+      }
+    });
+  };
+
+  isItInDB = () => {
+    const {googleId} = this.props.book;
+    API.findOne(googleId).then(res =>
+      res.data ? this.setState({toSaved: true}) : null
+    );
+  };
+
+  render() {
+    const {
+      _id,
+      title,
+      subtitle,
+      description,
+      authors,
+      thumbnail,
+      googleId,
+    } = this.props.book;
+
+    // Don't like this nested ternary, but first I make sure there are authors and if not assign 'n/a'
+    const shortAuthors = authors
+      ? authors.length > 1
+        ? `${authors[0].substring(0, 20)} ...`
+        : authors[0].substring(0, 22)
+      : 'n/a';
+
+    // render only 240 characters in the initial description
+    const shortDescription =
+      description && `${description.substring(0, 140)} ...`;
+
+    // helper function to render authors
+    const authorsList = authors && helpers.authorList(authors);
+
+    // function to conditionally render the delete button depending if user is visiting Saved or Search
+    const saveOrDeleteButton = _id ? (
+      <ButtonSt onClick={() => this.props.deleteBook(_id)}>Delete</ButtonSt>
+    ) : (
+      <ButtonSt onClick={this.saveBook}>Save</ButtonSt>
+    );
+
+    const saved = this.state.toSaved ? <SavedSt>saved</SavedSt> : null;
+    return (
+      <BookItemLiSt>
+        <TitleSt>{title}</TitleSt>
+        <SubtitleSt>{subtitle || '-'}</SubtitleSt>
+        <AuthorSt>{shortAuthors}</AuthorSt>
+        <ImgContainerSt>
+          <ImageSt style={{position: 'relative'}}>
+            <ImgSt src={thumbnail} alt={`book: ${title}`} />
+            {saved}
+          </ImageSt>
+          <DescriptionSt>{shortDescription}</DescriptionSt>
+          <ButtonContainerSt>
+            <Link
+              to={{
+                pathname: `/search/${googleId}`,
+                state: {
+                  book: this.props.book,
+                  thumbnail,
+                },
+              }}
+            >
+              <ButtonSt>View</ButtonSt>
+            </Link>
+            {saveOrDeleteButton}
+          </ButtonContainerSt>
+        </ImgContainerSt>
+      </BookItemLiSt>
+    );
+  }
+}
+
+// CSS_____________________________________________________
+
 const BookItemLiSt = styled.li`
   background-color: var(--white-transparent);
   max-width: 300px;
@@ -85,95 +181,3 @@ const ButtonContainerSt = styled.div`
   display: flex;
   justify-content: center;
 `;
-
-export default class BookItem extends Component {
-  state = {
-    toSaved: false,
-  };
-
-  componentDidMount() {
-    this.isItInDB() && this.setState({toSaved: true});
-  }
-
-  saveBook = () => {
-    const book = this.props.book;
-    const googleId = book.googleId;
-    // Make sure that the book to save is not already in the database
-    API.findOne(googleId).then(res => {
-      if (!res.data) {
-        API.saveBook(this.props.book)
-          // change the state of toSaved in order to trigger <Redirect to='/saved' />
-          .then(() => this.setState(() => ({toSaved: true})))
-          .catch(err => console.log(err));
-      }
-    });
-  };
-
-  isItInDB = () => {
-    const {googleId} = this.props.book;
-    API.findOne(googleId).then(res =>
-      res.data ? this.setState({toSaved: true}) : null
-    );
-  };
-
-  render() {
-    const {
-      _id,
-      title,
-      subtitle,
-      description,
-      authors,
-      thumbnail,
-      googleId,
-    } = this.props.book;
-
-    const shortAuthors =
-      authors.length > 1
-        ? `${authors[0].substring(0, 20)} ...`
-        : authors[0].substring(0, 22);
-
-    // render only 240 characters in the initial description
-    const shortDescription =
-      description && `${description.substring(0, 140)} ...`;
-
-    // helper function to render authors
-    const authorsList = authors && helpers.authorList(authors);
-
-    // function to conditionally render the delete button depending if user is visiting Saved or Search
-    const saveOrDeleteButton = _id ? (
-      <ButtonSt onClick={() => this.props.deleteBook(_id)}>Delete</ButtonSt>
-    ) : (
-      <ButtonSt onClick={this.saveBook}>Save</ButtonSt>
-    );
-
-    const saved = this.state.toSaved ? <SavedSt>saved</SavedSt> : null;
-    return (
-      <BookItemLiSt>
-        <TitleSt>{title}</TitleSt>
-        <SubtitleSt>{subtitle || '-'}</SubtitleSt>
-        <AuthorSt>{shortAuthors}</AuthorSt>
-        <ImgContainerSt>
-          <ImageSt style={{position: 'relative'}}>
-            <ImgSt src={thumbnail} alt={`book: ${title}`} />
-            {saved}
-          </ImageSt>
-          <DescriptionSt>{shortDescription}</DescriptionSt>
-          <ButtonContainerSt>
-            <Link
-              to={{
-                pathname: `/search/${googleId}`,
-                state: {
-                  book: this.props.book,
-                  thumbnail,
-                },
-              }}
-            >
-              <ButtonSt>View</ButtonSt>
-            </Link>
-            {saveOrDeleteButton}
-          </ButtonContainerSt>
-        </ImgContainerSt>
-      </BookItemLiSt>
-    );
-  }
-}
