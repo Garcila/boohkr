@@ -2,6 +2,27 @@ import React from 'react';
 import Parallax from 'parallax-js';
 import styled from 'styled-components';
 
+// export default function NotFound() {
+export default class NotFound extends React.Component {
+  componentDidMount() {
+    let scene = document.getElementById('scene');
+    let parallxInstance = new Parallax(scene);
+  }
+  render() {
+    return (
+      <ContainerSt id='scene'>
+        <NotFoundImgSt data-depth='0.5' />
+        <NotFoundImgTxt data-depth='0.1'>
+          That what you Seek is not here
+        </NotFoundImgTxt>
+        <FourOhFourSt>404</FourOhFourSt>
+      </ContainerSt>
+    );
+  }
+}
+
+// CSS_____________________________________________________
+
 const ContainerSt = styled.div`
   display: flex;
   flex-direction: column;
@@ -37,22 +58,3 @@ const FourOhFourSt = styled.p`
     top: 25vh !important;
   }
 `;
-
-// export default function NotFound() {
-export default class NotFound extends React.Component {
-  componentDidMount() {
-    let scene = document.getElementById('scene');
-    let parallxInstance = new Parallax(scene);
-  }
-  render() {
-    return (
-      <ContainerSt id='scene'>
-        <NotFoundImgSt data-depth='0.5' />
-        <NotFoundImgTxt data-depth='0.1'>
-          That what you Seek is not here
-        </NotFoundImgTxt>
-        <FourOhFourSt>404</FourOhFourSt>
-      </ContainerSt>
-    );
-  }
-}
