@@ -41,11 +41,11 @@ export default function Detail(props) {
 const DetailSt = styled.main`
   display: flex;
   flex: 1 auto;
-  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_42,w_800/v1555686397/03.png')
+  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_42,w_800/v1555686397/Boohkr/03.png')
     left no-repeat;
 
   @media only screen and (max-device-width: 770px) and (-webkit-min-device-pixel-ratio: 2) {
-    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_42,w_400/v1555686397/03.png')
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_42,w_400/v1555686397/Boohkr/03.png')
       bottom no-repeat;
     flex-direction: column;
     align-items: center;

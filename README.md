@@ -30,14 +30,14 @@ Get it from Github at [Garcila](git@github.com:Garcila/boohkr.git) and make it y
 ## Screenshots
 
 <p align="center">
-<img src="https://res.cloudinary.com/garcila/image/upload/v1556111854/boohkr_landscape.png" alt='Ipad Landscape Mode Landing Page' />
+<img src="https://res.cloudinary.com/garcila/image/upload/v1556111854/Boohkr/boohkr_landscape.png" alt='Ipad Landscape Mode Landing Page' />
 </p>
 
 <p align="center">
-<img src="https://res.cloudinary.com/garcila/image/upload/v1556117598/boohkr_search.png" atl='Ipad Portrait Mode Search Page' />
+<img src="https://res.cloudinary.com/garcila/image/upload/v1556117598/Boohkr/boohkr_search.png" atl='Ipad Portrait Mode Search Page' />
 
 <p align="center">
-<img src="https://res.cloudinary.com/garcila/image/upload/v1556117599/boohkr_saved.png" atl='Ipad Portrait Mode Saved Page' />
+<img src="https://res.cloudinary.com/garcila/image/upload/v1556117599/Boohkr/boohkr_saved.png" atl='Ipad Portrait Mode Saved Page' />
 </p>
 
 ## Built With

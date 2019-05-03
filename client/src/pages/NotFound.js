@@ -31,7 +31,7 @@ const ContainerSt = styled.div`
 `;
 const NotFoundImgSt = styled.div`
   flex: 1;
-  background: url('https://res.cloudinary.com/garcila/image/upload/o_32/v1555686397/03.png')
+  background: url('https://res.cloudinary.com/garcila/image/upload/o_32/v1555686397/Boohkr/03.png')
     no-repeat center;
   background-size: 60vh;
 `;

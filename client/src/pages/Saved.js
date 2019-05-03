@@ -58,11 +58,11 @@ export default class Saved extends Component {
 
 const SavedContainerSt = styled.div`
   flex: 1 auto;
-  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_1000/v1555690658/02.png')
+  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_1000/v1555690658/Boohkr/02.png')
     repeat-y 50vw;
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_400/v1555690658/02.png')
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_400/v1555690658/Boohkr/02.png')
       repeat-y 40vw;
   }
 `;
