@@ -26,7 +26,7 @@ export default function Landing() {
 
 const LandingSt = styled.div`
   flex: 1;
-  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,w_1038/v1555251885/10.png')
+  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,w_1038/v1555251885/Boohkr/10.png')
     no-repeat right;
   background-attachment: fixed;
   background-size: 50vw;
@@ -35,12 +35,12 @@ const LandingSt = styled.div`
   justify-content: center;
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,w_200/v1555251885/10.png')
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,w_200/v1555251885/Boohkr/10.png')
       no-repeat;
     background-position: center 20px;
   }
   @media only screen and (max-device-height: 570px) and (-webkit-min-device-pixel-ratio: 2) {
-    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,w_100/v1555251885/10.png')
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,w_100/v1555251885/Boohkr/10.png')
       no-repeat;
     background-position: center 10px;
   }

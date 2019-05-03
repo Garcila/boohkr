@@ -74,16 +74,16 @@ export default class Search extends Component {
 
 const SearchContainerSt = styled.div`
   flex: 1;
-  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_1000/v1555623687/06.png')
+  background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_22,w_1000/v1555623687/Boohkr/06.png')
     no-repeat right;
 
   @media only screen and (min-device-width: 480px) and (max-device-width: 770px) and (-webkit-min-device-pixel-ratio: 2) {
-    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_12,w_1000/v1555623687/06.png')
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_12,w_1000/v1555623687/Boohkr/06.png')
       repeat-y right;
   }
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_12,w_1000/v1555623687/06.png')
+    background: url('https://res.cloudinary.com/garcila/image/upload/c_scale,o_12,w_1000/v1555623687/Boohkr/06.png')
       right;
   }
 `;
